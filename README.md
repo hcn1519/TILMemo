@@ -1,7 +1,7 @@
 # TILMemo
 블로그로 쓰기에는 짧은 내용을 정리하는 저장소
 
-## Atomic/NotAtomic
+## Atomic/non Atomic
 
 * atomic - 중단되지 않는
 
