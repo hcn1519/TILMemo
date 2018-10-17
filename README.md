@@ -39,3 +39,41 @@ int main(int argc, const char * argv[]) {
 * Pass By Reference - 데이터의 주소를 함수에 제공하면 함수가 그곳에 데이터를 집어 넣는다.
 
 * 참고자료 - [아론 힐리가스의 Objective-C 프로그래밍](https://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788994506401)
+
+
+
+## ObjectiveC를 통한 객체 개념 이해
+* 객체는 객체끼리 메시지를 주고받으며 일을 처리한다. 메시지는 항상 함수를 trigger하며 이 때 호출되는 함수를 메소드(method)라고 한다.
+
+즉, 어떤 객체의 메소드를 호출하는 것은 
+
+	1. 해당 메소드로 호출되는 함수를 실행한다.
+	2. 해당 클래스에 메시지를 보낸다.
+
+의 의미 모두 해당된다.
+
+### 클래스
+
+* 특정 타입의 객체를 설명해놓은 것
+* 이 설명에는 메소드와 데이터를 저장하는 장소인 인스턴스 변수도 포함된다.
+* 클래스에 의해 힙에 생성된 객체를 인스턴스라고 한다.
+
+### Message
+
+Message는 메시지를 받는 객체의 포인터(receiver)와 트리거될 메소드의 이름(selector)로 구성되어 있다.
+
+#### 메시지 보내기
+```objectivec
+NSDate *now = [NSDate date];
+[now dateByAddingTimeInterval:100];
+```
+* `now`(receiver): 메시지를 받을 객체의 주소
+* `dateByAddingTimeInterval`(selector): 트리거할 메소드의 이름
+* 위의 코드는 `NSDate` 클래스에 메시지를 보내서 새 객체가 시작하는 지점의 주소를 `now` 변수에 저장하는 코드이다.
+
+메소드는 메시지를 받는 receiver에 따라 크게 2가지로 나뉜다.
+
+* 클래스 메소드: 클래스에 메시지를 보내는 메소드, receiver가 클래스,  `[NSDate date]`
+* 인스턴스 메소드: 인스턴스에 메시지를 보내는 메소드,  receiver가 인스턴스,  `[now dateByAddingTimeInterval:100]`
+	
+* 참고자료 - [아론 힐리가스의 Objective-C 프로그래밍](https://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788994506401)
