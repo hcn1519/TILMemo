@@ -88,3 +88,26 @@ NSDate *now = [NSDate date];
 3. 위 과정을 반복하고, 메시지를 처리할 메소드가 있으면 해당 메소드를, 없으면 종료한다.
 
 * 이와 같은 방식으로 메시지가 전달되기 때문에 오버라이딩 된 메소드가 부모 클래스의 메소드보다 우선적으로 수행될 수 있다.
+
+
+## 객체 소유권(Object Ownership)
+* A 객체 안에 B 객체 인스턴스 변수를 포함하고 있을 때 , A는 B 객체를 소유한다(own)고 말한다.
+* 누구에게도 소유되지 않은 객체는 메모리에서 해제된다.
+* 객체가 Collection에 추가된다면, Collection에는 객체에 대한 포인터가 저장되므로, Collection은 객체를 소유하게 된다.
+* 객체가 Collection에서 제거된다면, Collection에서도 객체에 대한 포인터가 제거되어 객체는 소유자를 잃는다.
+
+* property의 strong의 의미 - 객체의 소유권을 주장한다.
+```objectivec
+@interface Asset : NSObject
+// label에 대한 소유권은 Asset이 가지고 있다.
+@property (strong) NSString *label;
+@end
+```
+
+* property의 weak의 의미 - 객체의 소유권을 주장하지 않는다.
+```objectivec
+@interface Asset : NSObject
+// label에 대한 소유권을 Asset이 가지지 않는다.
+@property (weak) NSString *label;
+@end
+```
