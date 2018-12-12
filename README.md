@@ -114,5 +114,8 @@ NSDate *now = [NSDate date];
 
 ## Pod install vs Pod update
 
-* pod install - 처음 프로젝트에 pods을 설치할 때 사용한다. 또한 새로운 pods을 추가하거나, 제거할 때도 사용한다.
-* pod update - 새로운 버전으로 pods을 올릴 때만 사용한다.
+1. pod install - 처음 프로젝트에 pods을 설치할 때 사용한다. 또한 새로운 pods을 추가하거나, 제거할 때도 사용한다. 한 번 설치된 pods은 `Podfile.lock`에서 
+설치된 버전이 명시되어 있기 때문에 새로운 버전이 release되어 있어도 새로 pod을 설치하지 않는다.
+1. pod update - 새로운 버전으로 pods을 올릴 때만 사용한다.
+1. pod outdated - 새로운 버전이 release된 pods 리스트를 알려준다.
+
