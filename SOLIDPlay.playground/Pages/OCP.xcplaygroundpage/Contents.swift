@@ -25,6 +25,12 @@ protocol FinancialReportRequester {
 
 // MARK: Interactor
 enum Interactor {
+    /*
+     - 추이 종속성을 제거하기 위해 Request/Response를 별도로 정의한다.
+     - Interactor는 가장 높은 수준의 정책(업무 규칙)을 포함하고 있기 때문에, 가장 OCP를 잘 준수하고, 다른 것들로부터 영향을 덜 받는 구조로 구성된다.
+     - A 컴포넌트가 B 컴포넌트를 사용하면 A 컴포넌트가 B 컴포넌트에 의존한다. 그런데 이 때, A 컴포넌트와 B 컴포넌트 사이에 인터페이스를 정의하면 의존성 역전이 발생하고,
+     A 컴포넌트는 B 컴포넌트에 대해 의존하지 않게 된다. 이는 바꿔 말하면, 의존성 역전을 통해 A 컴포넌트가 B 컴포넌트의 변화로부터 보호 받게 되는 것을 의미한다.
+     */
     struct FinancialReportRequest {
 
     }
@@ -75,6 +81,10 @@ protocol FinancialReportPresenter {
 
 // MARK: Presenter
 enum Presenter {
+    /*
+     - 보고서를 표시/출력하는 책임을 웹/프린터에 따라 분리한다.(SRP)
+     - 하나의 모듈이 하나의 Actor(웹, 프린터)에 대해서만 책임을 지도록 한다.
+     */
 
     class ScreenPresenter: FinancialReportPresenter {
         func presentReport(response: Interactor.FinancialReportRespone) {
