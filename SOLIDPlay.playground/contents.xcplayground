@@ -4,5 +4,6 @@
         <page name='SRP'/>
         <page name='OCP'/>
         <page name='LSP'/>
+        <page name='ISP'/>
     </pages>
 </playground>

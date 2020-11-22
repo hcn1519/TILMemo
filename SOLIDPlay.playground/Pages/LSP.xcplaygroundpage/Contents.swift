@@ -27,3 +27,12 @@ let requestForAcme = DriverRequest2(name: "Bob",
 
 print(requestForPurple.dispatchCommand)
 print(requestForAcme.dispatchCommand)
+
+// Rectangle, Square Usage
+let rect = New.Rectangle(width: 3, height: 5)
+let square = New.Square(side: 3)
+
+let user1 = New.User(rect: rect)
+let user2 = New.User(rect: square)
+user1.useRectangle()
+user2.useRectangle()
