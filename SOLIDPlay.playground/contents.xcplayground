@@ -3,5 +3,6 @@
     <pages>
         <page name='SRP'/>
         <page name='OCP'/>
+        <page name='LSP'/>
     </pages>
 </playground>
