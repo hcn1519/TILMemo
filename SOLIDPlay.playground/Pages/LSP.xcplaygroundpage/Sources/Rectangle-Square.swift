@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Old {
+public enum Problem {
     public class User {
         let rect: Rectangle
 
@@ -44,7 +44,7 @@ public enum Old {
     }
 }
 
-public enum New {
+public enum Solution {
     public class User {
         let rect: Rectangle
 

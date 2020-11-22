@@ -2,7 +2,7 @@
 
 import Foundation
 
-enum Old {
+enum Problem {
     struct User1 {
         var ops: OPS
 
@@ -55,7 +55,7 @@ protocol U3OPS {
     func ops3()
 }
 
-enum New {
+enum Solution {
     final class User1 {
         // OPS에 의존하지 않고, U1OPS 인터페이스에만 의존하므로써, 불필요한 재컴파일, 재배포를 방지한다.
         let ops: U1OPS
